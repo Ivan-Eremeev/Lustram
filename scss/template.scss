@@ -1,0 +1,277 @@
+a {
+	text-decoration: none;
+	transition: .3s;
+}
+body {
+	background-color: #fff;
+	color: #67676b;
+	font-family: "P22UndergroundCYPro";
+	font-size: 16px;
+	font-weight: 500;
+}
+input::placeholder {
+	color: #67676b;
+}
+.wrapper {
+	@include wrapper();
+}
+.row {
+	@include row();
+}
+
+.header {
+	padding: 28px 0;
+	.wrapper {
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+			width: 100%;
+		}
+	}
+}
+.logo-container {
+	width: 35%;
+	padding: 10px 10px 0 0;
+	float: left;
+	@media (max-width: $break_lg) {
+		width: 50%;
+	}
+}
+.logo {
+	display: block;
+	max-width: 424px;
+	padding-top: 88px;
+	background: url(../img/logo.png) no-repeat;
+	background-size: contain;
+	color: $violet;
+}
+.contacts-search {
+	float: left;
+	width: 43%;
+	@media (max-width: $break_lg) {
+		width: 100%;
+		margin-top: 30px;
+	}
+}
+.contacts {
+	margin-bottom: 20px;
+	&_list {
+		li {
+			display: inline-block;
+			vertical-align: top;
+			width: 24%;
+			line-height: 1.4;
+			color: $head;
+			white-space: nowrap;
+		}
+		a {
+			display: block;
+			margin-bottom: 5px;
+			color: $head;
+		}
+		span {
+			font-size: 12px;
+			color: #a9aeb6;
+			&.popap-btn {
+				display: block;
+				span {
+					display: inline-block;
+					transition: .3s;
+					border-bottom: 1px solid transparent;
+					cursor: pointer;
+					&:hover {
+						color: $blue;
+						border-color: $blue;
+					}
+				}
+				&--margin {
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+	@media (max-width: $break_lg) {
+		float: left;
+		width: 50%;
+		li {
+			width: 49%;
+			margin-bottom: 10px;
+		}
+	}
+	@media (max-width: $break_sm) {
+		width: 100%;
+	}
+}
+.search {
+	height: 44px;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 6px 14px 2px rgba(46, 74, 120, 0.19);
+	position: relative;
+	input {
+		padding: 0 80px 0 30px;
+		height: 100%;
+		width: 100%;
+		border: none;
+		outline: none;
+		background-color: #fff;
+		font-size: 12px;
+		&::placeholder {
+			color: #a9aeb6;
+		}
+	}
+	button {
+		width: 68px;
+		height: 100%;
+		background-color: $violet;
+		border: none;
+		outline: none;
+		font-size: 20px;
+		color: #fff;
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	@media (max-width: $break_lg) {
+		float: left;
+		width: 50%;
+		max-width: 500px;
+		margin-top: 20px;
+	}
+	@media (max-width: $break_sm) {
+		width: 100%;
+		margin-top: 0;
+	}
+}
+.login-cart {
+	float: right;
+	width: 22%;
+	text-align: right;
+	@media (max-width: $break_lg) {
+		width: 50%;
+	}
+}
+.login {
+	padding-top: 14px;
+	margin-bottom: 36px;
+	&_list {
+		li {
+			display: inline-block;
+			&:last-child {
+				padding-left: 40px;
+				position: relative;
+				&:after {
+					content: '';
+					display: block;
+					background-color: $violet;
+					border-radius: 50%;
+					position: absolute;
+					width: 6px;
+					height: 6px;
+					top: 50%;
+					left: 16px;
+					margin-top: -6px;
+				}
+			}
+		}
+		a {
+			color: $head;
+			text-transform: uppercase;
+			transition: .3s;
+			border-bottom: 1px solid transparent;
+			&:hover {
+				color: $blue;
+				cursor: pointer;
+				border-color: $blue;
+			}
+		}
+	}
+	@media (max-width: $break_xs) {
+		padding-top: 0;
+		&_list {
+			li {
+				display: block;
+				&:last-child {
+					margin-top: 10px;
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+.carts {
+	&_list {
+		li {
+			display: inline-block;
+			vertical-align: top;
+			margin-bottom: 10px;
+		}
+		a {
+			display: block;
+			height: 44px;
+			margin-left: 15px;
+		}
+	}
+	&_compare {
+		width: 44px;
+		background-color: #fff;
+		box-shadow: 0 6px 14px 2px rgba(46, 74, 120, 0.19);
+		border-radius: 50%;
+		background-image: url(../img/balance.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		&:hover {
+			background-color: $violet;
+		}
+	}
+	&_like {
+		width: 44px;
+		height: 44px;
+		background-color: #fff;
+		box-shadow: 0 6px 14px 2px rgba(46, 74, 120, 0.19);
+		border-radius: 50%;
+		background-image: url(../img/like.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		&:hover {
+			background-color: $violet;
+		}
+	}
+	&_cart {
+		padding-top: 8px;
+		padding-left: 60px;
+		color: $head;
+		font-size: 12px;
+		position: relative;
+		text-align: left;
+		&:hover:after {
+			background-color: $violet;
+		}
+		&:after {
+			content: '';
+			display: block;
+			width: 44px;
+			height: 44px;
+			box-shadow: 0 6px 14px 2px rgba(46, 74, 120, 0.19);
+			border-radius: 50%;
+			background-color: #fff;
+			background-image: url(../img/cart.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: -22px;
+			transition: .3s;
+		}
+		span {
+			display: block;
+			color: $violet;
+			font-weight: 600;
+		}
+	}
+}
